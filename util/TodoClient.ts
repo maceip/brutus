@@ -16,6 +16,9 @@ export class TodoClient {
   addTodo(todo: Todo) {
     return fetch(`${this.api}/todo`, {
       method: "POST",
+      mode: 'cors', // no-cors, *cors, same-origin
+      referrerPolicy: 'no-referrer', // no-referrer, *client
+
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
@@ -27,6 +30,8 @@ export class TodoClient {
   listTodos() {
     return fetch(`${this.api}/todo`, {
       credentials: "include",
+      mode: 'cors', // no-cors, *cors, same-origin
+      referrerPolicy: 'no-referrer', // no-referrer, *client
     });
   }
 
@@ -34,6 +39,8 @@ export class TodoClient {
     return fetch(`${this.api}/todo/${id}`, {
       method: "PATCH",
       credentials: "include",
+      mode: 'cors', // no-cors, *cors, same-origin
+      referrerPolicy: 'no-referrer', // no-referrer, *client
       headers: {
         "Content-Type": "application/json",
       },
@@ -45,12 +52,16 @@ export class TodoClient {
     return fetch(`${this.api}/todo/${id}`, {
       method: "DELETE",
       credentials: "include",
+      mode: 'cors', // no-cors, *cors, same-origin
+      referrerPolicy: 'no-referrer', // no-referrer, *client
     });
   }
 
   logout() {
     return fetch(`${this.api}/logout`, {
       credentials: "include",
+      mode: 'cors', // no-cors, *cors, same-origin
+      referrerPolicy: 'no-referrer', // no-referrer, *client
     });
   }
 }
